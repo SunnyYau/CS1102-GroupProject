@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PNG</title>
+  <style>
+.navbar {
+
+  display: flex;
+  align-items: center;
+}
+.menu{
+  width: 40px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+nav{
+  flex: 1;
+  text-align:left;
+  background-color:rgb(62, 57, 98,0.7) ;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 30px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+    body {
+      display: grid;
+      font-family: Arial;
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./cloud.gif'); 
+      background-size: cover;
+      background-position: center;
+      color: white;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 20px;
+      height: 100vh;
+    }
+    .image-right {
+      float: right;
+      margin: 0 0 10px 10px;
+    }
+    
+
+    .header {
+      grid-column: 1 / span 2;
+      text-align: center;
+      background-color:rgba(59, 103, 196, 0.7) ;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+     
+     }
+
+    .header:hover {
+      background-color: #002b80;
+    }
+
+    .sidebar,
+    .content,
+    .sidebar-small,
+    .content-small {
+      background-color: rgb(59, 103, 196,0.7);
+      padding: 70px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar:hover,
+    .content:hover,
+    .sidebar-small:hover,
+    .content-small:hover {
+      background-color: #002b80;
+    }
+
+    .active {
+      background-color: rgb(59, 103, 196,0.8);
+    }
+    footer{
+      color:black;
+      text-align: center;
+      background-color: rgba(246, 211, 186, 0.8);
+      height: auto;
+      position:fixed;
+      margin-top: 50%;
+      overflow: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100px;
+    }
+
+  </style>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const sidebarItems = document.querySelectorAll(".sidebar li");
+      const contentItems = document.querySelectorAll(".content li");
+      const sidebarSmallItems = document.querySelectorAll(".sidebar-small li");
+      const contentsmall = document.querySelectorAll(".content-small li");
+
+      sidebarItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          sidebarItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      contentItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          contentItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      sidebarSmallItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          sidebarSmallItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <img src="./menu.png" class="menu" />
+    <nav>
+      <ul>
+        <li><a href="./PROJECT.html">Homepage</a></li>
+        <li><a href="./">JPG</a></li>
+        <li><a href="./CS1102 2.html">PNG</a></li>
+        <li><a href="">GIF</a></li>
+        <li><a href="./TIFF.html">TIFF</a></li>
+        <li><a href="./">Comparison</a></li>
+      </ul>
+    </nav>
+  
+  </div>
+  <div class="header">
+    <h1>GIF</h1>
+    <p>The GIF format was created in 1987 by CompuServe as a type of bitmap image format. Originally created for basic images, then its fame grew thanks to its effective compression technique that minimizes file size while maintaining quality.<br>
+      Even with the emergence of newer formats, GIFs continue to be popular because they are widely supported and versatile in conveying information and entertainment.
+</p>
+  </div>
+  <div class="sidebar">
+    <h2>Pros of GIF</h2>
+    <ul>
+      <li>Universal Compatibility:<br>
+        One of the biggest advantages of GIFs is their universal compatibility. They can be viewed on virtually any device or platform without the need for special software or plugins.</li>
+      <li>Small File Size:<br>
+        GIFs are typically smaller in file size compared to other video formats like MP4 or AVI. This makes them ideal for sharing on websites, social media platforms, and through messaging apps, as they load quickly even on slower internet connections.</li>
+      <li>Looping Animation:<br>
+        GIFs are perfect for creating short, looping animations. This makes them great for conveying emotions, reactions, or conveying a message concisely and engagingly.
+</li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2>How does it work?</h2>
+    <ul>
+      <li>Dictionary Creation:<br>
+        Initially, a dictionary of symbols (like pixels or colors) is formed</li>
+      <li>Pattern Recognition:<br>
+        LZW identifies repeated patterns and replaces them with shorter codes</li>
+      <li>Variable-Length Codes:<br>
+        Shorter codes are assigned to common patterns, thus optimizing the compression</li>
+      <li>Compression Efficiency:<br>
+        LZW significantly reduces file size while maintaining image quality</li>
+      <li>Metadata Embedding:<br>
+        Compressed data and decoding information are stored within the GIF file</li>
+    </ul>
+  </div>
+  <div class="sidebar-small">
+    <h2>Cons of GIF</h2>
+    <ul>
+      <li>Limited Color Palette:<br>
+        Traditional GIFs are limited to a 256-color palette, which can result in reduced image quality, especially for complex images or photographs. This limitation can lead to color banding and loss of detail.</li>
+      <li>Large File Sizes for Longer Animations:<br>
+        PNG's lossless compression method is not as efficient as lossy compression formats like JPEG. As a result, PNG files can be larger, which may not be suitable for situations where file size is a significant concern.</li>
+      <li>No Sound:<br>
+        GIFs do not support sound, unlike video formats such as MP4 or MOV. This limits their use in situations where audio is important for conveying a message or enhancing the viewer's experience.</li>
+    </ul>
+  </div>
+  <div class="content-small">
+    <h2>Application of GIF</h2>
+    <ul>
+      <li>
+        <img src="GIF_WebPage.gif" class="image-right" width="130" height="130"></br>
+        Web Graphics:<br>
+        GIF for showing animated logos, banners, buttons in web</li>
+      <li>
+        <img src="GIF_IG.gif" class="image-right" width="130" height="130"></br>
+        Social Media Interactions:<br>
+         GIF act as a memes, reaction, storytelling tool in social media like Instagram</li>
+      <li>
+        <img src="GIF_Whatsapp.gif" class="image-right" width="130" height="130"></br>
+        Communication:<br>
+         GIF are used for conveying emotions, demonstrating processes in apps like Whatsapp</li>
+    </ul>
+  </div>
+</body>
+<footer>
+  MENBERS LIST<br>
+  <li>Yau Sheung Ching (58539352)</li>
+  <li>Zhang Xi Tong (57845879)</li>
+  <li>Chan Yuk Kwan (56212704)</li>
+  <li>Li Wang Cheong (57149051)</li>
+</footer>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PNG</title>
+  <style>
+.navbar {
+display: flex;
+align-items: center;
+}
+.menu{
+width: 40px;
+cursor: pointer;
+margin-left: 10px;
+}
+nav{
+flex: 1;
+text-align:left;
+background-color:rgb(62, 57, 98,0.7) ;
+}
+nav ul li {
+list-style: none;
+display: inline-block;
+margin-left: 30px;
+}
+nav ul li a {
+text-decoration: none;
+color: #fff;
+font-size: 17px;
+font-weight: bold;
+}
+    body {
+      display: grid;
+      font-family: Arial;
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./cloud.gif'); 
+      background-size: cover;
+      background-position: center;
+      color: white;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 20px;
+      height: 100vh;
+    }
+    .image-right {
+      float: right;
+      margin: 0 0 10px 10px;
+    }
+    
+
+    .header {
+      grid-column: 1 / span 2;
+      text-align: center;
+      background-color: rgba(59, 103, 196, 0.7);
+      padding: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .header:hover {
+      background-color: #002b80;
+    }
+
+    .sidebar,
+    .content,
+    .sidebar-small,
+    .content-small {
+      background-color: rgba(59, 103, 196, 0.7);
+      padding: 70px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar:hover,
+    .content:hover,
+    .sidebar-small:hover,
+    .content-small:hover {
+      background-color: #002b80;
+    }
+
+    .active {
+      background-color: rgba(59, 103, 196, 0.8);
+    }
+    footer{
+      color:black;
+      text-align: center;
+      background-color: rgba(246, 211, 186, 0.7);
+      height: auto;
+      position:fixed;
+      margin-top: 50%;
+      overflow: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100px;
+    }
+
+  </style>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const sidebarItems = document.querySelectorAll(".sidebar li");
+      const contentItems = document.querySelectorAll(".content li");
+      const sidebarSmallItems = document.querySelectorAll(".sidebar-small li");
+      const contentsmall = document.querySelectorAll(".content-small li");
+
+      sidebarItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          sidebarItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      contentItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          contentItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      sidebarSmallItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          sidebarSmallItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <img src="./menu.png" class="menu" />
+    <nav>
+      <ul>
+        <li><a href="./PROJECT.html">Homepage</a></li>
+        <li><a href="./">JPG</a></li>
+        <li><a href="">PNG</a></li>
+        <li><a href="./ImgComAlg_GIF.html">GIF</a></li>
+        <li><a href="./TIFF.html">TIFF</a></li>
+        <li><a href="./">Comparison</a></li>
+      </ul>
+    </nav>
+  
+  </div>
+  <div class="header">
+    <h1>PNG</h1>
+    <p>Portable network graphics is a bitmap graphics format that supports lossless compression and supports indexed, grayscale, RGB color schemes, and alpha channel features.<br>
+      The development goal of PNG is to improve and replace GIF as a format suitable for network transmission without requiring a patent license, so it is widely used on the Internet and other aspects.</p>
+  </div>
+  <div class="sidebar">
+    <h2>Pros of PNG</h2>
+    <ul>
+      <li>Lossless Compression:<br>
+        PNG uses lossless compression, meaning that the image quality is not compromised during compression and decompression. This makes it ideal for storing images without sacrificing visual fidelity.</li>
+      <li>Transparency Support:<br>
+        PNG supports alpha channel transparency, allowing images to have transparent backgrounds or partially transparent areas. This is useful for creating graphics that can overlay on different backgrounds seamlessly.</li>
+      <li>Wide Compatibility:<br>
+        Divides the compressed data into chunks stored in the PNG file along with metadata and structure.</li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2>How does it work?</h2>
+    <ul>
+      <li>Filtering:<br>
+        Predicts pixel values based on neighboring pixels and subtracts the predicted value from the actual value to reduce redundancy</li>
+      <li>Deflate Compression:<br>
+        Uses LZ77 to replace repeated pixel sequences with references and Huffman coding to assign shorter codes to common patterns</li>
+      <li>Data Chunking:<br>
+        The compressed data is divided into chunks and stored in the PNG file along with other metadata and structural information.</li>
+    </ul>
+  </div>
+  <div class="sidebar-small">
+    <h2>Cons of PNG</h2>
+    <ul>
+      <li>Larger File Size:<br>
+        Compared to other image formats like JPEG, PNG files tend to have larger file sizes, especially for complex images. This can impact storage space and increase loading times, particularly for large-scale web applications.</li>
+      <li>Limited Compression:<br>
+        PNG's lossless compression method is not as efficient as lossy compression formats like JPEG. As a result, PNG files can be larger, which may not be suitable for situations where file size is a significant concern.</li>
+      <li>No Animation Support:<br>
+        PNG does not support animation, unlike formats such as GIF or APNG (Animated PNG). If animation is required, other formats would be more appropriate.</li>
+    </ul>
+  </div>
+  <div class="content-small">
+    <h2>Application of PNG</h2>
+    <ul>
+      <li>
+        Web Graphics:<br>
+        PNG is commonly used for web graphics, including icons, logos, and illustrations, due to its support for transparent backgrounds.</li>
+      <li>
+        <img src="film-to-digital.jpg" class="image-right" width="130" height="130"></br>
+        Digital Photography:<br>
+        PNG is used for storing images in digital photography, particularly in situations where lossless compression is desired.</li>
+      <li>
+        <img src="01_01_01.jpg" class="image-right" width="130" height="130"></br>
+        Image Editing:<br>
+        PNG files can be easily edited and manipulated using various software programs without significant loss of image quality.</li>
+    </ul>
+  </div>
+</body>
+<footer>
+  MENBERS LIST<br>
+  <li>Yau Sheung Ching (58539352)</li>
+  <li>Zhang Xi Tong (57845879)</li>
+  <li>Chan Yuk Kwan (56212704)</li>
+  <li>Li Wang Cheong (57149051)</li>
+</footer>
+</html>

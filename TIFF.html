@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TIFF</title>
+  <style>
+.navbar {
+
+  display: flex;
+  align-items: center;
+}
+.menu{
+  width: 40px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+nav{
+  flex: 1;
+  text-align:left;
+  background-color:rgb(62, 57, 98,0.7) ;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 30px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+}
+    body {
+      display: grid;
+      font-family: Arial;
+      background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./cloud.gif'); 
+      background-size: cover;
+      background-position: center;
+      color: white;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 20px;
+      height: 100vh;
+    }
+    .image-right {
+      float: right;
+      margin: 0 0 10px 10px;
+    }
+    
+
+    .header {
+      grid-column: 1 / span 2;
+      text-align: center;
+      background-color:rgba(59, 103, 196, 0.7) ;
+      padding: 10px;
+      transition: background-color 0.3s ease;
+     
+     }
+
+    .header:hover {
+      background-color: #002b80;
+    }
+
+    .sidebar,
+    .content,
+    .sidebar-small,
+    .content-small {
+      background-color: rgb(59, 103, 196,0.7);
+      padding: 70px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar:hover,
+    .content:hover,
+    .sidebar-small:hover,
+    .content-small:hover {
+      background-color: #002b80;
+    }
+
+    .active {
+      background-color: rgb(59, 103, 196,0.8);
+    }
+    footer{
+      color:black;
+      text-align: center;
+      background-color: rgba(246, 211, 186, 0.7);
+      height: auto;
+      position:fixed;
+      margin-top: 50%;
+      overflow: auto;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100px;
+    }
+
+  </style>
+  <script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      const sidebarItems = document.querySelectorAll(".sidebar li");
+      const contentItems = document.querySelectorAll(".content li");
+      const sidebarSmallItems = document.querySelectorAll(".sidebar-small li");
+      const contentsmall = document.querySelectorAll(".content-small li");
+
+      sidebarItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          sidebarItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      contentItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          contentItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+
+      sidebarSmallItems.forEach(function(item) {
+        item.addEventListener("click", function() {
+          sidebarSmallItems.forEach(function(item) {
+            item.classList.remove("active");
+          });
+          this.classList.add("active");
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="navbar">
+    <img src="./menu.png" class="menu" />
+    <nav>
+      <ul>
+        <li><a href="./PROJECT.html">Homepage</a></li>
+        <li><a href="./">JPG</a></li>
+        <li><a href="./CS1102 2.html">PNG</a></li>
+        <li><a href="./ImgComAlg_GIF.html">GIF</a></li>
+        <li><a href="">TIFF</a></li>
+        <li><a href="./">Comparison</a></li>
+      </ul>
+    </nav>
+  
+  </div>
+  <div class="header">
+    <h1>TIFF</h1>
+    
+  </div>
+  <div class="sidebar">
+    <h2>What is TIFF file format and What compression algorithms used:</h2>
+    <p>   Tiff is a kind of lossless image format. It is primarily used to 
+        transfer images between two devices and high-quality printing since
+         it could remain a high resolution and quality.<br>
+         <p></p>
+         Lossless compression algorithm makes files smaller and faster to transfer. Also, it 
+         allows the original file to be intact if the file is compressed and 
+         decomposed back to the original version. Unlike JPGs and PNGs, TIFF 
+         is uncompressed. <br>
+         <p></p>
+         But when the TIFF file is huge, many compression 
+         algorithms can be utilized to reduce storage cost such as LZW and ZIP 
+         algorithms. In application, both LZW and ZIP offer similar compression. </p>
+  </div>
+  <div class="content">
+    <h2>How does LZW compression algorithm works:</h2>
+    <p>LZW compression algorithm works by reading a sequence of symbols and constructing
+         a table called codebook with a particular bit pattern set.The number of table 
+         entries usually is 4096, the first 256 (0-255) codes are allocated to standard 
+         character sets and the rest of the table is blank.<br>
+         <p></p>
+          When process it, the table keeps expanding with new characters. If the same pattern on the table appears 
+          again in the input, a shorter code replaces that pattern. Shorter codes 
+          occupy less space than the original pattern. With the increase of shorter codes, 
+          the algorithm is also efficient since the simpler file. </p>
+  </div>
+  <div class="sidebar-small">
+    <h2>Pros of LZW compression</h2>
+    <ul>
+      <li>Efficiency:<br>
+        It is useful for files containing plentiful repetitive data and is commonly useful with monochrome images.</li>
+      <li>High compression ratio:<br>
+        Since this algorithm applies dynamic compression of the data being compression, so the compression ratio can be high enough despite the repetitive data</li>
+      <li>Simple to operate: <br>
+        It is relatively simple to use as prior input about the data flow is not required.</li>
+        <li>Reliable algorithm:<br>
+        LZW supports most operating systems and software applications. So it is widely used as a ideal choice for compression and decompression</li>
+    </ul>
+  </div>
+  <div class="content-small">
+    <h2>Cons of LZW compression</h2>
+    <ul>
+      <li>
+       Cost:<br>
+       It was patented in the 80s, so  licensing fees are required for many years. It may increase the extra cost to the application of LZW. </li>
+      <li>
+        Speed:</br>
+        it is slower than other compression algorithms since it has to keep updating its codebook. Hence, LZW is not the most efficient compression algorithm unless the file contains a lot of repeated data.</li>
+      <li>
+        LZW vs ZIP:<br>
+        It is available to both LZW and ZIP algorithms for 8-bit TIFF files. However, the ZIP algorithm is a better option than LZW for 16-bit TIFF files because LZW may make 16-bit files larger</li>
+    </ul>
+  </div>
+</body>
+<footer>
+  MENBERS LIST<br>
+  <li>Yau Sheung Ching (58539352)</li>
+  <li>Zhang Xi Tong (57845879)</li>
+  <li>Chan Yuk Kwan (56212704)</li>
+  <li>Li Wang Cheong (57149051)</li>
+</footer>
+
+</html>
